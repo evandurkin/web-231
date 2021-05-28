@@ -7,6 +7,6 @@ Enterprise JavaScript Course
 ## Contributors
 
 <ul>
-    <li>Professor Seymour<li>
-    <li>Evan Durkin<li>
+    <li>Professor Seymour</li>
+    <li>Evan Durkin</li>
 </ul>

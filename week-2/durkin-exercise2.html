@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!---
+Title: Assignment 2.2
+Author: Evan Durkin
+Date: 5 June 2021
+Description: Demonstrates use of JavaScript onclick and function
+References:
+https://www.w3schools.com/html/html_scripts.asp
+https://www.w3schools.com/js/js_whereto.asp
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_alert
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/global.css" type="text/css" media="all">
+    <title>WEB 231 – Enterprise JavaScript I</title>
+</head>
+
+<body>
+    <h1>Exercise 2.2 Hello JavaScript</h1>
+    <button type="button" onclick="btnMyCourse()">What course am I taking?</button>
+    <p id="txtMyWorld">You are now in Durkin's world!</p>
+
+    <!--The course number and name-->
+    <script>
+        function btnMyCourse() {
+            alert("WEB 231 – Enterprise JavaScript I");
+        }
+    </script>
+
+    <!--Returns to GitHub index landing page-->
+    <a class="return-home" href="https://evandurkin.github.io/web-231/">Return</a>
+</body>
+</html>

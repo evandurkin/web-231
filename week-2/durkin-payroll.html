@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <!--
+    Title: Assignment 2.3
+    Author: Evan Durkin
+    Date: 6 June 2021
+    Description: Demonstrates JavaScript document.getElementById, .toLocaleDateString, and .toFixed
+    
+    References:
+    .toLocaleDateString: https://www.w3schools.com/jsref/jsref_tolocaledatestring.asp
+    .toFixed: https://www.w3schools.com/jsref/jsref_tofixed.asp
+    --->
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/Users/evand/OneDrive/Desktop/buwebdev/web-231/global.css">
+        <link rel="stylesheet" href="/Users/evand/OneDrive/Desktop/buwebdev/web-231/site.css" type="text/css">
+        <link rel="stylesheet" href="durkin-payroll.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div id="container">
+            <h1 class="app-header">Payroll System</h1>
+            <h3>Employee Record 1</h3>
+                <ul>
+                    <li id="txtFirstNameLudwig"></li>
+                    <li id="txtLastNameBeethoven"></li>
+                    <li id="txtAddressLudwig"></li>
+                    <li id="txtHireDateLudwig"></li>
+                    <li id="txtPayRateLudwig"></li>
+                </ul>
+            <h3>Employee Record 2</h3>
+                <ul>
+                    <li id="txtFirstNameJohan"></li>
+                    <li id="txtLastNameBach"></li>
+                    <li id="txtAddressJohan"></li>
+                    <li id="txtHireDateJohan"></li>
+                    <li id="txtPayRateJohan"></li>
+                </ul>
+            <h3>Employee Record 3</h3>
+                <ul>
+                    <li id="txtFirstNameWolfgang"></li>
+                    <li id="txtLastNameMozart"></li>
+                    <li id="txtAddressWolfgang"></li>
+                    <li id="txtHireDateWolfgang"></li>
+                    <li id="txtPayRateWolfgang"></li>
+                </ul>
+            <a class="return-home" href="https://evandurkin.github.io/web-231/">Return</a>
+        </div>
+
+        <script>
+            // Hire date for all employees
+            var d = new Date().toLocaleDateString("en-US");
+
+            // Employee Record 1 scripts
+            document.getElementById("txtFirstNameLudwig").innerHTML = "Ludwig";
+            document.getElementById("txtLastNameBeethoven").innerHTML = "Beethoven";
+            document.getElementById("txtAddressLudwig").innerHTML = "505 main street";
+            document.getElementById("txtHireDateLudwig").innerHTML = d;
+            document.getElementById("txtPayRateLudwig").innerHTML = 18.94.toFixed(1);
+
+            // Employee Record 2 scripts
+            document.getElementById("txtFirstNameJohan").innerHTML = "Johan";
+            document.getElementById("txtLastNameBach").innerHTML = "Bach";
+            document.getElementById("txtAddressJohan").innerHTML = "512 main street";
+            document.getElementById("txtHireDateJohan").innerHTML = d;
+            document.getElementById("txtPayRateJohan").innerHTML = 12.53.toFixed(1);
+
+            // Employee Record 3 scripts
+            document.getElementById("txtFirstNameWolfgang").innerHTML = "Wolfgang";
+            document.getElementById("txtLastNameMozart").innerHTML = "Mozart";
+            document.getElementById("txtAddressWolfgang").innerHTML = "600 main street";
+            document.getElementById("txtHireDateWolfgang").innerHTML = d;
+            document.getElementById("txtPayRateWolfgang").innerHTML = 50.14.toFixed(1); 
+        </script>
+    </body>
+</html>

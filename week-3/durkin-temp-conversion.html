@@ -1,0 +1,61 @@
+<!--
+Title: Assignment 3.2
+Author: Evan Durkin
+Date: 12 June 2021
+Description: Form demonstrating JavaScript input and parseFloat formula.
+References:
+onClick Event: https://www.w3schools.com/jsref/event_onclick.asp
+Text Value Input: https://www.w3schools.com/jsref/prop_text_value.asp
+-->
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Users/evand/OneDrive/Desktop/buwebdev/web-231/global.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/Users/evand/OneDrive/Desktop/buwebdev/web-231/site.css" type="text/css" media="all">
+    <link rel="stylesheet" href="durkin-temp-conversion.css" type="text/css" media="all">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+    <title>WEB 231 – Enterprise JavaScript I</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1 class="app-header">Welcome to the Temperature Conversion App!</h1>
+
+        <!--Container for inputting fahrenheit value for conversion-->
+        <div id="card-container">
+            <div class="card">
+                <div class="card-title">Fahrenheit to Celsius Converter</div>
+                <div class="card-content">
+                    <div class="form">
+                        <div class="form-field">
+                            <label for="txtFahrenheit">Fahrenheit value:</label>
+                            <input type="text" class="input" id="txtFahrenheit" name="txtFahrenheit"/>
+                            <button onclick="myFunction()" class="btn btn-primary">Convert Temperature</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-title">Conversion Results</div>
+                <div class="card-content">
+                    <p id="value"></p>
+                </div>
+            </div>
+            <br>
+            <a class="return-home" href="https://evandurkin.github.io/web-231/">Return</a>
+        </div>
+    </div>
+
+    <script>
+        //Retrieves fahrenheit value and applies parseFloat formula to convert to Celsius
+        function myFunction() {
+            let fahrenheit = document.getElementById("txtFahrenheit").value;
+            document.getElementById("value").innerHTML = ((parseFloat(fahrenheit) - 32) / 1.8).toFixed(2);
+        }
+    </script>
+</body>
+</html>

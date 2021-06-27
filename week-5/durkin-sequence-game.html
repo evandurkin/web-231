@@ -86,9 +86,9 @@ alert: https://www.w3schools.com/jsref/met_win_alert.asp
       if (choice === "odd") {
           for (num2; num2 < 20; num2+=2) {
             //   num2 = num2 + 2;
-            fibonacciSequenceText += num2 + ",";
+            fibonacciSequenceText += num2 + "," + " ";
           }
-          document.getElementById("results").innerHTML = fibonacciSequenceText.slice(0, -1);
+          document.getElementById("results").innerHTML = fibonacciSequenceText.slice(0, -2);
       }
 
       if (choice === "select") {

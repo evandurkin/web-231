@@ -1,0 +1,135 @@
+<!--
+Title: Assignment 6.2   
+Author: Evan Durkin
+Date: 2 July 2021
+Description: demonstrates the use of binding JS objects to an HTML table onClick
+References:
+objects: https://www.w3schools.com/js/js_objects.asp
+hide: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+if/else: https://www.w3schools.com/js/js_if_else.asp
+innerhtml: https://www.w3schools.com/jsref/prop_html_innerhtml.asp
+-->
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+    
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../global.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../site.css" type="text/css" media="all">
+    <link rel="stylesheet" href="durkin-in-n-out-books.css" type="text/css" media="all">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+    <title>WEB 231 - Enterprise JavaScript I</title>
+</head>
+
+<body onload="onLoad()">
+    <div id="container">
+        <h1 class="app-header">Welcome to In-N-Out Books</h1>
+        <div class="card card-content">
+            <div class="card-title">My Favorites</div>
+            <div id="form">
+                <label>Choose a listing:</label>
+                <select id="favoriteList" class="drop-down-menu">
+                    <option value="select">Select</option>
+                    <option value="books">Top 3 Favorite Books</option>
+                    <option value="authors">Top 3 Favorite Authors</option>
+                </select>
+            </div>
+            <button onclick="myFunction()" id="btnDisplayListing" class="btn btn-primary">Display Listing</button>
+        </div>
+        <br>
+        <a class="return-home" href="https://evandurkin.github.io/web-231/">Return</a>
+        <div class="card card-content" id="favorite-books">
+            <div class="card-title">Top 3 Favorite Books</div>
+            <table id="books-table">
+                <tr>
+                    <th>ISBN</th>
+                    <th>Title</th>
+                    <th>Pages</th>
+                </tr>
+            </table>
+        </div>
+        <div class="card card-content" id="favorite-authors">
+            <div class="card-title">Top 3 Favorite Authors</div>
+            <table id="authors-table">
+                <tr>
+                    <th>Name</th>
+                    <th>Genre</th>
+                </tr>
+            </table> 
+        </div>
+    </div>
+</body>
+
+<script>
+    //objects for Top 3 Favorite Books
+    const book1 = {
+        isbn: "9780142437204",
+        title: "Jane Eyre",
+        pages: "532",
+    }
+    const book2 = {
+        isbn: "9780809436231",
+        title: "Bend Sinister",
+        pages: "217",
+    }
+    const book3 = {
+        isbn: "9780143105035",
+        title: "Frankenstein",
+        pages: "304",
+    }
+    // objects for Top 3 Favorite Authors
+    const author1 = {
+        name: "Charlotte Bronte",
+        genre: "Suspense",
+    }
+    const author2 = {
+        name: "Vladimir Nabokov",
+        genre: "Dystopian",
+    }
+    const author3 = {
+        name: "Mary Shelley",
+        genre: "Gothic",
+    }
+
+    let books;
+    let authors;
+    
+    //hides Books and Authors tables on page load
+    function onLoad() {
+        books = document.getElementById("favorite-books");
+        authors = document.getElementById("favorite-authors");
+        books.style.display = "none";
+        authors.style.display = "none";
+    }
+    
+    //retrieves either the Book or Author list for display
+    function myFunction() {
+        let choice = document.getElementById("favoriteList").value;
+
+        if (choice === "books") {
+            books.style.display = "block";
+            authors.style.display = "none";
+        }   else if (choice === "authors") {
+            books.style.display = "none"
+            authors.style.display = "block";
+        }   else {
+            books.style.display = "none";
+            authors.style.display = "none";
+        }
+        }
+    //string of book objects for HTML table
+        document.getElementById("books-table").innerHTML += 
+        "<tr><td>"+book1.isbn+"</td>" + "<td>"+book1.title+"</td>" + "<td>"+book1.pages+"</td></tr>" +
+        "<tr><td>"+book2.isbn+"</td>" + "<td>"+book2.title+"</td>" + "<td>"+book2.pages+"</td><tr>" +
+        "<tr><td>"+book3.isbn+"</td>" + "<td>"+book3.title+"</td>" + "<td>"+book3.pages+"</td></tr>";
+    
+    //string of author objects for HTML table
+    document.getElementById("authors-table").innerHTML += 
+        "<tr><td>"+author1.name+"</td>" + "<td>"+author1.genre+"</td></tr>" +
+        "<tr><td>"+author2.name+"</td>" + "<td>"+author2.genre+"</td></tr>" +
+        "<tr><td>"+author3.name+"</td>" + "<td>"+author3.genre+"</td></tr>";
+
+</script>
+</html>

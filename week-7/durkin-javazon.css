@@ -1,0 +1,42 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 2em;
+  color: #4f3674;
+  font-weight: 400;
+}
+
+.app-header {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+table tr th {
+  padding: 12px;
+  text-align: left;
+  background-color: #4f3674;
+  color: white;
+  border: 1px solid #ddd;
+}
+
+table td {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 12px;
+  border: 1px solid #ddd;
+}
+
+table tr:hover {
+  background-color: #d6a800;
+  color: #4f3674;
+  cursor: pointer;
+}

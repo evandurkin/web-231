@@ -1,0 +1,70 @@
+<!--
+Title: Assignment 8.2   
+Author: Evan Durkin
+Date: 18 July 2021
+Description: demonstrates the use of array, for/in
+References:
+for/in: https://www.w3schools.com/js/js_loop_forin.asp
+js array: https://www.w3schools.com/jsref/jsref_obj_array.asp
+js array: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+-->
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../global.css" type="text/css" media="all">
+        <link rel="stylesheet" href="../site.css" type="text/css" media="all">
+        <link rel="stylesheet" href="durkin-alphabet-game.css" type="text/css" media="all">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+        <title>WEB 231 - Enterprise JavaScript I</title>
+    </head>
+
+    <body>
+        <h1 class="app-header">Welcome to the Alphabet Game!</h1>
+            <div class="card card-content">
+                <div class="card-title">Alphabet Number Form</div>
+                <div id="form">
+                    <label>Alphabet Letter Position</label>
+                    <input class="input" id="txtPosition">
+                </div>
+                <button onclick="myFunction()" id="btnFindLetter" class="btn btn-primary">Find Letter</button>
+            </div>
+            <br>
+            <a class="return-home" href="https://evandurkin.github.io/web-231/">Return</a>
+            <div class="card card-content">
+                <div class="card-title">Letters in the Alphabet</div>
+                <div id="alphabet" class="alphabet-text"></div>
+            </div>
+            <br>
+            <div class="card card-content">
+                <div class="card-title">Results</div>
+                <div id="alphabet-letter" class="alphabet-text"></div>
+            </div>
+    </body>
+
+    <script>
+        const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+        let alphabetOutput = " ";
+        let x;
+
+        // Creates alphabet string with commas
+        for (x in alphabet) {
+            alphabetOutput += alphabet[x] + "," + " ";
+            document.getElementById("alphabet").innerHTML = alphabetOutput.slice(0, 77);
+        }
+        
+        //Captures letter position input and finds corresponding letter
+        function myFunction() {
+            let pos = document.getElementById("txtPosition").value;
+            let letter = alphabet[pos - 1]; 
+
+            if (letter === undefined) {
+                document.getElementById("alphabet-letter").innerHTML = "There are not" + " " + pos + " " + "letters in the alphabet";
+            } else {
+                document.getElementById("alphabet-letter").innerHTML =  letter + " " + "is at" + " " + pos + " " + "in the alphabet";
+            }
+        }
+    </script>
+</html>

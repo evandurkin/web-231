@@ -1,0 +1,35 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 50%;
+  margin: 0 25%;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 2em;
+  color: #4f3674;
+  font-weight: 400;
+}
+
+#btnDealCards {
+  width: 100%;
+}
+
+.app-header {
+  text-align: center;
+}
+
+.player-card {
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+#shuffled-cards {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  grid-template-columns: auto;
+  grid-template-areas: "card card card card";
+}
